@@ -1,10 +1,10 @@
 cask "threemf" do
-  version "1.0.0"
-  sha256 "efb117b0bb1c4603055449fdb93b2343554ca47c65764ab73f3b0487d2a6dada"
+  version "1.0.1"
+  sha256 "bb6a7634b15f0b325a1e062f2cf7eab6af5a5fa2395ed9dc811512d77f8128c0"
 
   url "https://github.com/guanchzhou/threemf/releases/download/v#{version}/threemf.zip"
   name "threemf"
-  desc "Quick Look plugin for previewing .3mf 3D printing files"
+  desc "Quick Look plugin for previewing .3mf and .stl 3D printing files"
   homepage "https://github.com/guanchzhou/threemf"
 
   depends_on macos: ">= :sonoma"
