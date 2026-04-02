@@ -1,6 +1,6 @@
 cask "threemf" do
-  version "1.0.3"
-  sha256 "9ff85326def3586a936b9cfb27470fbb712a0ef93e0a5c41942565a63d101a0a"
+  version "1.0.5"
+  sha256 "c689da7f517bff0fc11f84f6183c5af4417f41532567ffcc3b82ab24f752f36b"
 
   url "https://github.com/guanchzhou/threemf/releases/download/v#{version}/threemf.zip"
   name "threemf"
