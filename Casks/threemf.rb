@@ -1,6 +1,6 @@
 cask "threemf" do
-  version "1.0.5"
-  sha256 "c689da7f517bff0fc11f84f6183c5af4417f41532567ffcc3b82ab24f752f36b"
+  version "1.1.0"
+  sha256 "58e55571556f0bafa1db68fe80bfb0c03410afd5cc1bda22137967f89a6f4689"
 
   url "https://github.com/guanchzhou/threemf/releases/download/v#{version}/threemf.zip"
   name "threemf"
@@ -8,7 +8,6 @@ cask "threemf" do
   homepage "https://github.com/guanchzhou/threemf"
 
   depends_on macos: ">= :tahoe"
-  depends_on arch: :arm64
 
   app "threemf.app"
 
