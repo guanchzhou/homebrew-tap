@@ -4,15 +4,24 @@ cask "threemf" do
 
   url "https://github.com/guanchzhou/threemf/releases/download/v#{version}/threemf.zip"
   name "threemf"
-  desc "Quick Look plugin for previewing .3mf and .stl 3D printing files"
+  desc "Quick Look plugin for previewing .3mf, .stl, and .gcode 3D printing files"
   homepage "https://github.com/guanchzhou/threemf"
 
   depends_on macos: ">= :sonoma"
+
+  preflight do
+    installed = "/Applications/threemf.app"
+    if File.exist?(installed)
+      system_command "/bin/rm", args: ["-rf", installed], sudo: false
+    end
+  end
 
   app "threemf.app"
 
   zap trash: [
     "~/Library/Containers/com.andreymaltsev.3mf-quicklook.preview",
     "~/Library/Containers/com.andreymaltsev.3mf-quicklook.thumbnail",
+    "~/Library/Containers/com.andreymaltsev.3mf-quicklook.findersync",
+    "~/Library/Containers/com.andreymaltsev.3mf-quicklook.mdimporter",
   ]
 end
