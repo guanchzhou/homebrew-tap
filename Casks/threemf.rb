@@ -1,6 +1,6 @@
 cask "threemf" do
-  version "1.3.0"
-  sha256 "f088f23a3f5f2b74e958313cbb76b4997b5f904d16b9522c5989c52194086f68"
+  version "1.4.0"
+  sha256 "f54016c8ecb9a2e1aeaa19e15a853151937ca6ae1d612af3c61e7602136900a1"
 
   url "https://github.com/guanchzhou/threemf/releases/download/v#{version}/threemf.zip"
   name "threemf"
@@ -9,6 +9,10 @@ cask "threemf" do
 
   depends_on macos: ">= :sonoma"
 
+  # Remove any unmanaged /Applications/threemf.app left behind by manual installs
+  # (drag-and-drop from a release zip, local xcodebuild output, etc.) so the
+  # subsequent install step doesn't error with "It seems there is already an App at…".
+  # On a clean upgrade flow this is a no-op because brew has already uninstalled.
   preflight do
     installed = "/Applications/threemf.app"
     if File.exist?(installed)
