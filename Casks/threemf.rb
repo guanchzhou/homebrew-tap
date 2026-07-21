@@ -7,7 +7,7 @@ cask "threemf" do
   desc "Quick Look plugin for previewing .3mf, .stl, and .gcode 3D printing files"
   homepage "https://github.com/guanchzhou/threemf"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   # Remove any unmanaged /Applications/threemf.app left behind by manual installs
   # (drag-and-drop from a release zip, local xcodebuild output, etc.) so the
