@@ -7,7 +7,9 @@ cask "threemf" do
   desc "Quick Look plugin for previewing .3mf, .stl, and .gcode 3D printing files"
   homepage "https://github.com/guanchzhou/threemf"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
+
+  app "threemf.app"
 
   # Remove any unmanaged /Applications/threemf.app left behind by manual installs
   # (drag-and-drop from a release zip, local xcodebuild output, etc.) so the
@@ -20,12 +22,10 @@ cask "threemf" do
     end
   end
 
-  app "threemf.app"
-
   zap trash: [
-    "~/Library/Containers/com.andreymaltsev.3mf-quicklook.preview",
-    "~/Library/Containers/com.andreymaltsev.3mf-quicklook.thumbnail",
     "~/Library/Containers/com.andreymaltsev.3mf-quicklook.findersync",
     "~/Library/Containers/com.andreymaltsev.3mf-quicklook.mdimporter",
+    "~/Library/Containers/com.andreymaltsev.3mf-quicklook.preview",
+    "~/Library/Containers/com.andreymaltsev.3mf-quicklook.thumbnail",
   ]
 end
