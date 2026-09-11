@@ -15,11 +15,8 @@ cask "threemf" do
   # (drag-and-drop from a release zip, local xcodebuild output, etc.) so the
   # subsequent install step doesn't error with "It seems there is already an App at…".
   # On a clean upgrade flow this is a no-op because brew has already uninstalled.
-  preflight do
-    installed = "/Applications/threemf.app"
-    if File.exist?(installed)
-      system_command "/bin/rm", args: ["-rf", installed], sudo: false
-    end
+  preflight_steps do
+    remove "threemf.app", base: :appdir, recursive: true
   end
 
   zap trash: [
