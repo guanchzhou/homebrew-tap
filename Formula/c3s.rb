@@ -1,28 +1,28 @@
 class C3s < Formula
   desc "Kubernetes TUI client"
   homepage "https://github.com/guanchzhou/c3s"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-darwin-arm64.tar.gz"
-      sha256 "248629c52bdda7ffc7d689270f8d25eb76a0690a8290f44c5a2f13f9dcd2aa4e"
+      sha256 "1fc9a6bc40df88a350a5c9370157cf187c1f05bd9bca2c23df175528784e1be1"
     end
     on_intel do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-darwin-amd64.tar.gz"
-      sha256 "7c77eeec46f7e95673f16b85f3154465961a06c930403a5b9b492b051146f294"
+      sha256 "7dfdcece43518165fed74b5fbfa34aafd8324f4c77689363a127e58c47634d62"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-linux-arm64.tar.gz"
-      sha256 "2fa14493fc174115edc8309bd56638a448c8a8b7772868964bf500e4d697c177"
+      sha256 "37086876404bc961df1579d76d53e5fc6b0abe310446e7981e7d72c6cd6d77a2"
     end
     on_intel do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-linux-amd64.tar.gz"
-      sha256 "e7f71ddb61c140f53f0dfd1d792b7382196978cb9da999ea10ff5d9eb82610c6"
+      sha256 "5f2120012a71939811425c61653ebd2042402ceefc7e5e5cb46a45c0c7b47250"
     end
   end
 
