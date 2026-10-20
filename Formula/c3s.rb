@@ -1,33 +1,34 @@
 class C3s < Formula
   desc "Kubernetes TUI client"
   homepage "https://github.com/guanchzhou/c3s"
-  version "0.4.2"
+  version "0.4.3"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-darwin-arm64.tar.gz"
-      sha256 "8707b102c573a08f0a18f386a28a38a7d2662ed2b9171c157dffb044fbe67898"
+      sha256 "e8f1de70a0d5adebaac13f92d412752e3b4dfb73891b301524c8761bae311c22"
     end
     on_intel do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-darwin-amd64.tar.gz"
-      sha256 "29bf23589c1429163944bf421eaea4d662c192f6a4064c1af1e10fd414cfc059"
+      sha256 "01c12716cd49067cff22ac0619203131cdb0d2dc2452caf63d0f8de84bd13c56"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-linux-arm64.tar.gz"
-      sha256 "995508dcd2f7830db85753a06563a86513cc7fc63fcda76a496c641ce478fb71"
+      sha256 "dd2f5a34a2d1363774ca14150ca0bec4827ce54ec643c4eed223a2bd2fafa805"
     end
     on_intel do
       url "https://github.com/guanchzhou/c3s/releases/download/v#{version}/c3s-#{version}-linux-amd64.tar.gz"
-      sha256 "0858f1a593fbb83f8289be82b290c8bfc958c9743ddd82c4b5c4f9f3f3272b39"
+      sha256 "4ad3f6e3e5b0bfab8b7cab4573243952c22cf905b3dc81be8d72061086ed6d98"
     end
   end
 
   def install
-    bin.install "c3s"
+    libexec.install "c3s", "skins"
+    bin.install_symlink libexec/"c3s"
   end
 
   test do
