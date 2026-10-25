@@ -7,6 +7,11 @@ cask "threemf" do
   desc "Quick Look plugin for previewing .3mf, .stl, and .gcode 3D printing files"
   homepage "https://github.com/guanchzhou/threemf"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on macos: :sonoma
 
   app "threemf.app"
@@ -20,6 +25,12 @@ cask "threemf" do
   end
 
   zap trash: [
+    "~/Library/Application Scripts/com.andreymaltsev.3mf-quicklook",
+    "~/Library/Application Scripts/com.andreymaltsev.3mf-quicklook.findersync",
+    "~/Library/Application Scripts/com.andreymaltsev.3mf-quicklook.mdimporter",
+    "~/Library/Application Scripts/com.andreymaltsev.3mf-quicklook.preview",
+    "~/Library/Application Scripts/com.andreymaltsev.3mf-quicklook.thumbnail",
+    "~/Library/Containers/com.andreymaltsev.3mf-quicklook",
     "~/Library/Containers/com.andreymaltsev.3mf-quicklook.findersync",
     "~/Library/Containers/com.andreymaltsev.3mf-quicklook.mdimporter",
     "~/Library/Containers/com.andreymaltsev.3mf-quicklook.preview",

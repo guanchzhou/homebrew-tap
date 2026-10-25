@@ -4,6 +4,11 @@ class ZigTelegram < Formula
   version "0.1.0"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/guanchzhou/zig-telegram/releases/download/v#{version}/zig-telegram-#{version}-darwin-arm64.tar.gz"
@@ -31,6 +36,6 @@ class ZigTelegram < Formula
   end
 
   test do
-    assert_match "0.1.0", shell_output("#{bin}/zig-telegram version")
+    assert_match "zig-telegram #{version}", shell_output("#{bin}/zig-telegram --version")
   end
 end

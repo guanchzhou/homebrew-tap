@@ -1,0 +1,49 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@e99025eb970cfa124b8284a35463d87426917478 # 2026.09.28.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: brew trust guanchzhou/tap
+
+      - run: brew test-bot --only-cleanup-before
+
+      - run: brew test-bot --only-setup
+
+      - run: brew test-bot --only-tap-syntax
+
+      - run: brew audit --strict --tap guanchzhou/tap
+
+      - name: Install and test formulae
+        run: |
+          for formula in c3s zig-telegram; do
+            brew install "guanchzhou/tap/${formula}"
+            brew test "guanchzhou/tap/${formula}"
+          done
+
+      - name: Fetch cask
+        if: runner.os == 'macOS'
+        run: brew fetch --cask guanchzhou/tap/threemf
