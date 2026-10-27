@@ -10,23 +10,23 @@ class C3s < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/guanchzhou/c3s/releases/download/v0.4.4/c3s-0.4.4-darwin-arm64.tar.gz"
-      sha256 "ea536c5e43c2295221b3ef31416bc6089f92e3937ce01b12dd42781e18b896f0"
+      url "https://github.com/guanchzhou/c3s/releases/download/v0.5.0/c3s-0.5.0-darwin-arm64.tar.gz"
+      sha256 "17071de200af63a844770bab134cc045deb715fc927f8c8b0be3bcd6b4eb9fb1"
     end
     on_intel do
-      url "https://github.com/guanchzhou/c3s/releases/download/v0.4.4/c3s-0.4.4-darwin-amd64.tar.gz"
-      sha256 "64e52cf73ace46dc15f5435a9958510b2b947c6c5c2772c0b570b0daf62a8294"
+      url "https://github.com/guanchzhou/c3s/releases/download/v0.5.0/c3s-0.5.0-darwin-amd64.tar.gz"
+      sha256 "3b9148d9e910e857bc8cbdc507f4477b759319578fa914eaf38b5f0186f9f891"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/guanchzhou/c3s/releases/download/v0.4.4/c3s-0.4.4-linux-arm64.tar.gz"
-      sha256 "48295a320aa70d048d441c144565b4e1a2cf691629e14e6b8a83989c3ce44e12"
+      url "https://github.com/guanchzhou/c3s/releases/download/v0.5.0/c3s-0.5.0-linux-arm64.tar.gz"
+      sha256 "faa0b80f32663261e5e9ffd3ab38ad0a05f6b8c813dfe536fcf534670cccb940"
     end
     on_intel do
-      url "https://github.com/guanchzhou/c3s/releases/download/v0.4.4/c3s-0.4.4-linux-amd64.tar.gz"
-      sha256 "72b84f6bdf51366765df200ed098cb3c0abd1e60ebc949d01df2fdb2f8cd3de3"
+      url "https://github.com/guanchzhou/c3s/releases/download/v0.5.0/c3s-0.5.0-linux-amd64.tar.gz"
+      sha256 "f2be3e873e700d6f8db392eb1e1936e554cf05b91789c6ecb11b2611a51ab5b9"
     end
   end
 
